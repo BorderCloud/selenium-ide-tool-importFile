@@ -1,0 +1,15 @@
+# This is a basic workflow to help you get started with Actions
+
+name: TEST
+
+# Controls when the workflow will run
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Run jq
+        working-directory: ./test
+        run: jq
