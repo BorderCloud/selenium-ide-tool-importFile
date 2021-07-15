@@ -19,5 +19,22 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-sed -E "s/\{\{<([^>]+)>\}\}/{r \1}/" $input > $output
+cp -p $input $output
 
+ while : ; do
+    cp -p $output "$output.tmp"
+    datafile=$(jq -r 'first(.tests[].commands[].value | select(startswith("{{<"))| select(endswith(">}}"))  | ltrimstr("{{<") | rtrimstr(">}}"))' "$output.tmp")
+    echo "datafile $datafile"
+    if [ -z "$datafile" ]; then
+        # echo NOT FOUND
+        break
+    elif [ -f "$datafile" ]; then
+       # echo FOUND
+       jq --arg data "$(cat "$datafile")" '(first(.tests[].commands[].value | select(startswith("{{<"))| select(endswith(">}}")))) |= $data' "$output.tmp" > $output
+    else
+        printf 'Could not find "%s" referenced by "%s"\n' "$datafile" $input >&2
+        exit 1
+    fi
+done
+rm "$output.tmp"
+echo DONE

@@ -25,40 +25,36 @@
       "comment": "",
       "command": "click",
       "target": "id=sparql",
-      "targets": [
-        ["id=sparql", "id"],
-        ["name=sparql", "name"],
-        ["css=#sparql", "css:finder"],
-        ["xpath=//textarea[@id='sparql']", "xpath:attributes"],
-        ["xpath=//textarea", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "17de8711-1e20-46fd-9343-adad87cff2f0",
       "comment": "",
       "command": "type",
       "target": "id=sparql",
-      "targets": [
-        ["id=sparql", "id"],
-        ["name=sparql", "name"],
-        ["css=#sparql", "css:finder"],
-        ["xpath=//textarea[@id='sparql']", "xpath:attributes"],
-        ["xpath=//textarea", "xpath:position"]
-      ],
+      "targets": [],
       "value": "{{<test/myData.txt>}}"
     }, {
       "id": "cff95573-5152-4e4f-acbe-4062eef577fd",
       "comment": "",
       "command": "verifyValue",
       "target": "id=sparql",
-      "targets": [
-        ["id=sparql", "id"],
-        ["name=sparql", "name"],
-        ["css=#sparql", "css:finder"],
-        ["xpath=//textarea[@id='sparql']", "xpath:attributes"],
-        ["xpath=//textarea", "xpath:position"]
-      ],
+      "targets": [],
       "value": "Data in the file"
+    }, {
+      "id": "17de8711-1e20-46fd-9343-adad87cff2f1",
+      "comment": "",
+      "command": "type",
+      "target": "id=sparql",
+      "targets": [],
+      "value": "{{<test/myData1.txt>}}"
+    }, {
+      "id": "cff95573-5152-4e4f-acbe-4062eef577fe",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=sparql",
+      "targets": [],
+      "value": "Data1 in the file"
     }]
   }],
   "suites": [{

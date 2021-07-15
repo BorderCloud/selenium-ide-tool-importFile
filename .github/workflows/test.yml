@@ -24,9 +24,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run servers
         working-directory: ./test
-        run: docker-compose -f test/docker-compose.yaml up -d
+        run: docker-compose -f docker-compose.yaml up -d
 
       - name: Install selenium-side-runner
+        working-directory: ./test
         run: npm install -g selenium-side-runner
 
       - name: Run website
