@@ -11,6 +11,6 @@ jobs:
     
     steps:
       - run: jq
-      - run: sudo vim /etc/apt/sources.list
+      - run: sudo cat /etc/apt/sources.list
       - run: sudo apt-get install jq
       
