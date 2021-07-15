@@ -36,8 +36,11 @@ jobs:
         working-directory: ./test
         run: docker-compose -f docker-compose.yaml up -d
 
-      - name: Install selenium-side-runner
-        run: sudo npm install -g selenium-side-runner
+      - name: Install selenium-side-runner & drivers
+        run: |
+            sudo npm install -g selenium-side-runner
+            sudo npm install -g chromedriver
+            sudo npm install -g geckodriver
           
       - name: Test
         run: |
