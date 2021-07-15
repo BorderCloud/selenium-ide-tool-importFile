@@ -22,7 +22,9 @@ jobs:
       - uses: actions/setup-node@v2
 
       - name: Execute importFile
-        run: ./importFile.sh test/testImportFile.side -o ./test.side
+        run: |
+        chmod +x importFile.sh
+        ./importFile.sh test/testImportFile.side -o ./test.side
         
       - name: Run website
         working-directory: ./test
