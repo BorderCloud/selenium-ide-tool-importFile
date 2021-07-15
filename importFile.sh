@@ -24,7 +24,7 @@ cp -p $input $output
  while : ; do
     cp -p $output "$output.tmp"
     datafile=$(jq -r 'first(.tests[].commands[].value | select(startswith("{{<"))| select(endswith(">}}"))  | ltrimstr("{{<") | rtrimstr(">}}"))' "$output.tmp")
-    echo "datafile $datafile"
+    #echo "datafile $datafile"
     if [ -z "$datafile" ]; then
         # echo NOT FOUND
         break

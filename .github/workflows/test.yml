@@ -21,23 +21,21 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
 
-      # Runs a single command using the runners shell
-      - name: Run servers
-        working-directory: ./test
-        run: docker-compose -f docker-compose.yaml up -d
-
-      - name: Install selenium-side-runner
-        working-directory: ./test
-        run: npm install -g selenium-side-runner
-
+      - name: Execute importFile
+        run: ./importFile.sh test/testImportFile.side -o ./test.side
+        
       - name: Run website
         working-directory: ./test
         run: |
           yarn install
           yarn dev:httpd &
-          
-      - name: Execute importFile
-        run: ./importFile.sh test/testImportFile.side -o ./test.side
+        
+      - name: Run servers
+        working-directory: ./test
+        run: docker-compose -f docker-compose.yaml up -d
+
+      - name: Install selenium-side-runner
+        run: sudo npm install -g selenium-side-runner
           
       - name: Test
         run: |
