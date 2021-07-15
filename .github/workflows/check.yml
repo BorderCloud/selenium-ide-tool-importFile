@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Run jq
-        working-directory: ./test
-        run: jq
+      - run: jq
+      - run: sudo vim /etc/apt/sources.list
+      - run: sudo apt-get install jq
+      
