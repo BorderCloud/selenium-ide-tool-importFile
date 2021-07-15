@@ -2,7 +2,7 @@
   "id": "fdbb4408-5554-47ee-9862-46af16a955f8",
   "version": "2.0",
   "name": "Test importFile",
-  "url": "http://127.0.0.1:8000",
+  "url": "http://172.17.0.1:8000",
   "tests": [{
     "id": "9a36566b-651f-4388-95f3-e015bb7c4c8b",
     "name": "textarea",
