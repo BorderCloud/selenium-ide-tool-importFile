@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev:httpd": "ws -d ./ --spa textarea.html"
+  },
+  "dependencies": {
+    "local-web-server": "^5.0.0"
+  }
+}

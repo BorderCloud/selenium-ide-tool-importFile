@@ -1,0 +1,74 @@
+{
+  "id": "fdbb4408-5554-47ee-9862-46af16a955f8",
+  "version": "2.0",
+  "name": "Test importFile",
+  "url": "http://127.0.0.1:8000",
+  "tests": [{
+    "id": "9a36566b-651f-4388-95f3-e015bb7c4c8b",
+    "name": "textarea",
+    "commands": [{
+      "id": "c947e48a-044a-4ea6-9991-2a8b713438dd",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d98e04cd-963a-49f2-a01d-51dab5770353",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x755",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91f19798-b1b5-443e-9f25-9f05132f3f5e",
+      "comment": "",
+      "command": "click",
+      "target": "id=sparql",
+      "targets": [
+        ["id=sparql", "id"],
+        ["name=sparql", "name"],
+        ["css=#sparql", "css:finder"],
+        ["xpath=//textarea[@id='sparql']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "17de8711-1e20-46fd-9343-adad87cff2f0",
+      "comment": "",
+      "command": "type",
+      "target": "id=sparql",
+      "targets": [
+        ["id=sparql", "id"],
+        ["name=sparql", "name"],
+        ["css=#sparql", "css:finder"],
+        ["xpath=//textarea[@id='sparql']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "{{<test/myData.txt>}}"
+    }, {
+      "id": "cff95573-5152-4e4f-acbe-4062eef577fd",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "id=sparql",
+      "targets": [
+        ["id=sparql", "id"],
+        ["name=sparql", "name"],
+        ["css=#sparql", "css:finder"],
+        ["xpath=//textarea[@id='sparql']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Data in the file"
+    }]
+  }],
+  "suites": [{
+    "id": "4325965c-ac46-4989-b37c-1e26e763a909",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9a36566b-651f-4388-95f3-e015bb7c4c8b"]
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}
