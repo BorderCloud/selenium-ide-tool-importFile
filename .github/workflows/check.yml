@@ -10,7 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - run: jq
-      - run: sudo cat /etc/apt/sources.list
-      - run: sudo apt-get install jq
+      - run: curl 'https://raw.githubusercontent.com/BorderCloud/selenium-ide-tool-importFile/main/test/testImportFile.side' | jq '.'
       
